@@ -1,0 +1,122 @@
+<section class="home-page-agrolens">
+      <div class="main-container">
+        <header class="header-container">
+          <div class="logo-container">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c93ea808b0c8c23a0d93e95cedd27a4988027b7ddee356875bf629d8590b322?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="Agrolens logo" class="logo" />
+            <span class="brand-name">Agrolens</span>
+          </div>
+          <nav class="nav-container">
+            <ul class="nav-links">
+              <li class="nav-link"><a href="#home">Home</a></li>
+              <li class="nav-link"><a href="#about">About Us</a></li>
+              <li class="nav-link"><a href="#process">Process</a></li>
+              <li class="nav-link"><a href="#login">Login/Signup</a></li>
+            </ul>
+            <button class="upload-button">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e9bfdd4e8c1e5b5baf0565b8b9bae7adce51f5a7c3af36647913f741ea4d059e?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="" class="upload-icon" />
+              <span class="upload-text">Upload photo</span>
+            </button>
+          </nav>
+        </header>
+        <section class="hero-section">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1 class="hero-title">Diagnose Plant Health with Agrolens</h1>
+              <div class="hero-description">AgroLens uses advanced technology to analyze leaf photos and detect plant diseases instantly. Upload a photo to get quick, accurate insights and keep your plants healthy and thriving. Instant results through just one click</div>
+    <button class="cta-button">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5987f48467ee7e7de09057e433a4ec2b1a29960ba36f35ec65a9222567ad9979?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="" class="cta-icon" />
+    <span class="cta-text">Upload photo</span>
+    </button>
+    </div>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4bac875ad1e58452c05b84074c48eca21281c6c9dfad6ca49c8f3084c2bf3260?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="Plant health diagnosis" class="hero-image" />
+    </div>
+    </section>
+    <h2 class="section-title">How it works?</h2>
+    <section class="process-section">
+    <div class="process-steps">
+    <div class="process-step">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3df9355ea4efa201486580acd4cafd0c253c7bc9466bd531f87e717db6ff9446?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="" class="step-icon" />
+    <h3 class="step-title">Upload a photo</h3>
+    <p class="step-description">Take a clear picture of the affected leaf and upload it.</p>
+    </div>
+    <div class="process-step">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/14e8c60c90ea4f6b17eae33ea98de78f62bd0b05ea66ad0137aaf71d299da53c?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="" class="step-icon" />
+    <h3 class="step-title">Analysing</h3>
+    <p class="step-description">Our cutting-edge technology scans the image for signs of disease.</p>
+    </div>
+    <div class="process-step">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9954dece5399e4dbcb86791087c9dadeffa14e68951cefb28412698d79ed48de?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="" class="step-icon" />
+    <h3 class="step-title">Receive Results</h3>
+    <p class="step-description">Get instant insights and recommendations to address any issues.</p>
+    </div>
+    </div>
+    </section>
+    <section class="features-section">
+    <div class="feature-content">
+    <div class="feature-text">
+    <h2 class="feature-title">Why Choose Us?</h2>
+    <h3 class="feature-subtitle">Instant Results</h3>
+    <p class="feature-description">Agro Lens provides rapid and precise disease detection. Our advanced image recognition technology analyzes your leaf photos in seconds, giving you immediate feedback on plant health issues. With our real-time results, you can quickly address potential problems before they escalate.</p>
+    <button class="feature-button">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0fcbcd715625dc30f77fa9b7275e3cd2f60ec0e208d85c4f31466c1f4066e4fd?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="" class="feature-button-icon" />
+    <span class="feature-button-text">Give a Try!!</span>
+    </button>
+    </div>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee106710c02ffbaa4d2364fce38cd0c8d8198bcfec8545078fe54e85a1c65953?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="Instant results feature" class="feature-image" />
+    </div>
+    </section>
+    <section class="additional-features">
+    <div class="feature-row">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/edeaad17f66087650aec8976fc90c8306c4d49456631d13300df19a5ce4ac9bb?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="User-friendly interface" class="feature-image-left" />
+    <div class="feature-content-right">
+    <h3 class="feature-title-right">User-Friendly Interface</h3>
+    <p class="feature-description-right">Designed with simplicity in mind, our platform ensures a hassle-free experience. The easy-to-navigate interface allows you to upload leaf photos effortlessly, making the entire process straightforward, even for those who are not tech-savvy. Just a few clicks and you're set to go!</p>
+    </div>
+    </div>
+    <div class="feature-row">
+    <div class="feature-content-right">
+    <h3 class="feature-title-right">Proactive Plant Care</h3>
+    <p class="feature-description-right">Stay informed with regular updates and improvements. Our commitment to continuous innovation means that Agro Lens evolves with the latest research and advancements in plant disease detection, providing you with the most current and effective tools.</p>
+    <button class="feature-button">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a14c3d390ea6d13701b5679b1e90acf7617d8e6d88aa396aa8799aaff6540516?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="" class="feature-button-icon" />
+    <span class="feature-button-text">Get Diagnosis</span>
+    </button>
+    </div>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1e09e004625ece06a85a23331cd5ab990b384a346093621afd59f06413cab486?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="Proactive plant care" class="feature-image-left" />
+    </div>
+    <div class="feature-row">
+    <div class="feature-content-right">
+    <h3 class="feature-title-right">Farmers in Mind:</h3>
+    <p class="feature-description-right">Agro Lens is mainly built with farmers in mind. Our powerful tool helps you monitor large fields efficiently, detecting plant diseases early to maximize crop yield. By providing quick and accurate insights, we enable you to make informed decisions that protect your investment and ensure a successful harvest season.</p>
+    </div>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9b41e5d31b335d09c0a908e8985066153484c0b2577a65bdf2a606263e424fbe?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="Farmers using Agrolens" class="feature-image-left" />
+    </div>
+    </section>
+    <h2 class="about-us-title">About us</h2>
+    <div class="team-grid">
+    <div class="team-row">
+    <div class="team-member"></div>
+    <div class="team-member"></div>
+    <div class="team-member"></div>
+    <div class="team-member"></div>
+    </div>
+    <div class="team-row">
+    <div class="team-member"></div>
+    <div class="team-member"></div>
+    <div class="team-member"></div>
+    <div class="team-member"></div>
+    </div>
+    </div>
+    <h2 class="testimonial-title">Testimonial</h2>
+    <div class="testimonial-container">
+    <div class="testimonial-content">
+    <div class="testimonial-text">
+    <p>Agro Lens has been a game-changer for our farm. The ability to detect diseases early has saved us from significant crop losses. The process is simple—just snap a photo, and within seconds, I know exactly what I'm dealing with. The expert recommendations have helped me take immediate action, and the results have been incredible. Thanks to Agro Lens, my crops are healthier, and my yields have improved significantly. It's a must-have tool for any farmer!</p>
+    <p class="testimonial-author">-Rajashekhar, Nagole.</p>
+    </div>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b26c058b3da3f141f140ec46f5cb37bae740282af7d1dbf6bb8fd874eeac1cf?placeholderIfAbsent=true&apiKey=8c23630f5c8c4170a1fa12a453fe1602" alt="Farmer testimonial" class="testimonial-image" />
+    </div>
+    </div>
+    </div>
+    <footer class="footer"></footer>
+    </section>
