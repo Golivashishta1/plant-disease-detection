@@ -1,0 +1,49 @@
+body {
+    font-family: Poppins, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height: 100vh;
+}
+
+.testimonial-section {
+    text-align: left;
+}
+
+h1 {
+    font-size: 36px;
+    color: #33644B;
+    ;
+}
+
+.testimonial-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e4ffeb;
+    border-radius: 30px;
+    padding: 40px;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    max-width: 50%;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.testimonial-image img {
+    border-radius: 40px;
+    height: 350px;
+    width: 300px;
+    object-fit: cover;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
