@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.aboutus {
+    text-align: center;
+}
+
+.aboutus h1 {
+    font-size: 42px;
+    color: #4a5c39;
+    margin-bottom: 20px;x
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.icon {
+    width: 290px;
+    height: 305px;
+    background-color: #ddd;
+    border-radius: 48px;
+}
