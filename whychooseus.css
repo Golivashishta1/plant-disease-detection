@@ -1,0 +1,13 @@
+body {
+    background-color: #33644B;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    
+}
