@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant-Themed Image Upload</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #edf4e9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            padding: 20px; /* Added padding to prevent overflow */
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .header h1 {
+            color: #3A6351;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .upload-section {
+            margin-bottom: 30px;
+        }
+
+        .upload-box {
+            background-color: #f0f9f3;
+            border-radius: 15px;
+            padding: 40px;
+            border: 2px dashed #8fcf94;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            display: flex; /* Make the upload box flex */
+            flex-direction: column; /* Align items vertically */
+            align-items: center; /* Center items */
+        }
+
+        .upload-box:hover {
+            background-color: #d3f2da;
+            border-color: #76b041;
+        }
+
+        .upload-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .upload-icon {
+            width: 96px;
+            height: 96px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #3A6351;
+        }
+
+        .browse-text {
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .preview-section h2 {
+            color: #3A6351;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        #preview-container {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #preview-container img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+        }
+
+        .decorations {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .plant-icon,
+        .leaves-icon {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .leaves-icon {
+            position: absolute;
+            bottom: 10px; /* Adjusted to keep it in view */
+            right: 10px; /* Adjusted for better positioning */
+        }
+
+        .plant-icon {
+            position: absolute;
+            left: 10px; /* Adjusted for better positioning */
+            top: -20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .upload-icon {
+                width: 72px;
+                height: 72px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem; /* Reduced font size for smaller screens */
+            }
+
+            .upload-box {
+                padding: 20px; /* Reduced padding for smaller screens */
+            }
+
+            .upload-section {
+                margin-bottom: 20px; /* Reduced margin for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem; /* Further reduced for extra small screens */
+            }
+
+            .upload-box {
+                padding: 15px; /* Reduced padding for smaller screens */
+            }
+
+            p {
+                font-size: 0.9rem; /* Smaller font for small screens */
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Upload Your Leaf Image</h1>
+        </div>
+
+        <div class="upload-section">
+            <div class="upload-box" id="uploadBox">
+                <input type="file" id="fileUpload" class="file-input"  />
+                <div class="upload-content">
+                    <img src="https://img.icons8.com/?size=100&id=0w5y81mDF9mx&format=png&color=000000" alt="Upload Icon" class="upload-icon">
+                    
+                        <form action="/upload" method="post" enctype="multipart/form-data">
+                            <p class="whole_text_drag">Drag & Drop or <span class="browse-text" id="browse">
+                                <input type="file" class="file" name="image"><input type="submit" name="submit"></button>
+                            </span></p>
+                        </form>
+                        
+                </div>
+            </div>
+        </div>
+        <div class="decorations">
+            <img src="https://img.icons8.com/?size=100&id=yAG4oZGAIXhv&format=png&color=000000" alt="Plant Icon" class="plant-icon">
+            <img src="https://img.icons8.com/?size=100&id=18066&format=png&color=000000" alt="Leaves Icon" class="leaves-icon">
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

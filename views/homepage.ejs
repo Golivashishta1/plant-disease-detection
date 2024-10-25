@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif;
+}
+.landinglayout{
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+.branding {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.logo {
+    height: 60px;
+    width: 75px;
+}
+
+.nav {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+    text-decoration: none;
+    color: #315945;
+
+}
+
+.header {
+    /* background-color: red; */
+    margin: 0px;
+    padding: 40px 0 20px 100px;
+    /* Remove or change this property */
+    overflow: visible; /* or simply remove this line */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+
+}
+/* .headerinner{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    overflow: hidden;
+    align-items: center;
+    width: 100%; */
+/* } */
+.brandname{
+    font-family: poppins,sans-serif;
+    font-weight: bold;
+    align-items: center;
+    font-size: 24px;
+    padding: 10px;
+    justify-content: center;
+    color: #33644B  ;
+
+}
+.uploadnavbtn{
+    width: 182px;
+    height: 42px;
+    background-color: transparent;
+    border:solid #315945 2px;
+    border-radius: 47px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+    
+
+}
+.navli{
+    color: #000000;
+    text-decoration: none;
+    font-weight: normal;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.circleiconnav{
+    height: 42px;
+    width: 42px;
+    position: relative;
+    /* bottom:5px;
+    right: 2px; */
+    align-items: left;
+    border-radius: 100px;
+    
+    
+}
+.uploadtextnav{
+    position: relative;
+
+}
+.inner-content{
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.mainplant{
+    max-width: 615px;
+    max-height:618px;
+    align-items: right;
+    padding-right: 50px;
+    justify-content: center;
+    position: relative;
+    bottom: 40px; 
+}
+
+.mainhead{
+    width: 525px;
+    font-size: 48px;
+    align-items: left;
+    word-wrap: break-word;
+}
+.paramain{
+    text-wrap: wrap;
+    max-width: 487px;
+    word-wrap: break-word;
+    align-items: last;
+    display: flex;
+    flex-wrap: wrap;
+    color: #315945;
+    font-weight: 500;
+}
+.content-left{
+    color: #33644B;
+    padding-top:50px ;
+    padding-left: 50px;
+    gap: 5vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+.mainupload{
+    width: 300px;
+    height: 70px;
+    background-color:#315945;
+    color: #FFFFFF;
+    /* border:solid #315945 2px; */
+    border-radius: 47px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    }
+    .uploadtextmain{
+        font-weight: 600;
+        font-size: 16px;
+        
+    }
+    .mainiconupload{
+        
+        width: 40px;
+        height: 40px;
+        border-radius: 55px
+    }
+    .workcont{
+    display: flex;
+    max-height:574;
+    width: 100%;
+    flex-direction: column;
+        
+
+    
+}
+.box1howit{
+    width:276px ;
+    height: 327px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 61px;
+    gap: 30px;
+    box-shadow: 20px black;
+}
+.box1howit p{
+    width: 201px;
+    font-size: 20px;
+}
+.box1howit h3{
+    font-weight: 500;
+}
+.howithead{
+    margin: 40px;
+    align-self: center;
+    font-size: 36px;
+    font-weight: 500;
+    color: #33644B;
+}
+.cameraicon{
+    width: 78px;
+    height: 78px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.howitworkscontent{
+    height: 450px;
+    align-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.boxes3{
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+.nav {
+    background-color:transparent; /* Background color for the navbar */
+    padding: 10px;
+    position: relative;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent; /* Transparent background */
+    color: #33644B; /* Button text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+}
+
+.dropdown-content {
+    display: none; /* Hide dropdown initially */
+    position: absolute;
+    background-color: #fff; /* Background color */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Shadow */
+    z-index: 1; /* Layering */
+    border-radius: 10px; /* Rounded corners */
+    justify-content: center;
+}
+
+.dropdown-content a {
+    color: black; /* Text color */
+    padding: 12px 16px; /* Padding */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Block display */
+}
+
+.dropdown-content a:hover {
+    background-color: #e0e0e0; /* Hover effect */
+}
+
+/* Show the dropdown when the button is clicked */
+.show {
+    display: block; /* Show dropdown */
+}
+
+
+
+</style>
+
+<body>
+    <div class="landinglayout">
+        <div class="header">
+            <!-- <div class="headerinner"> -->
+                <div class="branding">
+                    <img href="/home" class="logo" src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/hhvpyail8kgadixa75ho.png" alt="logo">
+    
+                    <span class="brandname">Agrolens</span>
+                </div>
+                <div class="nav">
+                    <a class="navli" href="#">Home</a>
+                    <a class="navli" id="aboutusbt" href="#">About us</a>
+                    <a class="navli" onclick="scrollToElement()">Process</a>
+                    
+                    <% if (user || token) { %>
+                        <div class="dropdown">
+                            <button class="dropbtn"><%= user.username %>▼</button>
+                            <div class="dropdown-content">
+                                <a href="/logout">Logout</a>
+                                
+                                <a href="#">profile</a>
+                            </div>
+                        </div>
+                    <% } else { %>
+                        <a class="navli" href="/login">Login</a>
+                    <% } %>
+                    
+                    <!-- <button class="uploadnavbtn" onclick="window.location.href='/upload'">
+                        <img class="circleiconnav" src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/n3nghi8tfi8loenawhfd.png" alt="photo">
+                        <span class="uploadtextnav">Upload photo</span>
+                    </button> -->
+                </div>
+                
+            <!-- </div> -->
+        </div>
+            <div class="inner-content">
+                <div class="content-left">
+                    <h1 class="mainhead">Diagnose Plant Health with Agrolens</h1>
+                    <p class="paramain">AgroLens uses advanced technology to analyze leaf photos and detect plant
+                        diseases instantly. Upload a photo to get quick, accurate insights and keep your plants healthy
+                        and thriving.Instant results through just one click</p>
+                    <button onclick="window.location.href='/upload'" class="mainupload">
+                        <img class="mainiconupload" src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/krzccbpvrsxlzc1xktbu.png" alt="photo">
+                        <span class="uploadtextmain">Upload photo</span>
+                    </button>
+                </div>
+                <div class="content-right">
+                    <img class="mainplant" src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094314/lu9mlzwxynaldcmw4tww.png" alt="mainplants">
+                </div>
+            </div>
+    </div>
+    <div class="workcont"></div>
+        <div class="howithead" style="text-align:center"><h3>How it works?</h3></div>
+        <div class="howitworkscontent">
+            <div class="boxes3">
+                <div class="box1howit">
+                    <img class= "cameraicon"src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/nhyjauciy3crln5mpm9j.png" alt="">
+                    <h3>Upload a photo</h3>
+                    <p>Take a clear picture of the affected leaf and upload it.</p>
+                </div>
+                <div class="box1howit">
+                    <img class= "cameraicon"src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/l4wrlfy81zfnuheevuei.png" alt="">
+                    <h3>Analyzing</h3>
+                    <p>Take a clear picture of the affected leaf and upload it.</p>
+                </div>
+                <div class="box1howit">
+                    <img class= "cameraicon"src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094718/o5bt7zdpkhwqczgzrumc.png" alt="">
+                    <h3>Insant Results</h3>
+                    <p>Take a clear picture of the affected leaf and upload it.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function scrollToElement(){
+            const process=document.getElementsByClassName("workcont")[0];
+            process.scrollIntoView({ behavior: 'smooth' });
+        }
+        document.querySelector('.dropbtn').addEventListener('click', function() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.classList.toggle('show');
+});
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+            const openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+});
+
+
+    </script>
+</body>
+
+</html>
