@@ -8,6 +8,7 @@ const signuproute = require("./routes/signuproute");
 const loginroute = require("./routes/loginroute");
 const googleroute = require("./routes/googleroute");
 const logoutroute = require("./routes/logoutroute");
+const forgotroute=require("./routes/forgotroute")
 const passport = require("passport");
 const uploadroute=require("./routes/uploadroute")
 require("./config/passport-setup");
@@ -64,6 +65,7 @@ app.use("/login", loginroute);
 app.use("/auth/google", googleroute);
 app.use("/logout", logoutroute);
 app.use("/upload",uploadroute);
+app.use("/forgot",forgotroute);
 
 // Start server
 app.listen(port, () => {
