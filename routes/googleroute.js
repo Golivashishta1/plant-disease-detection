@@ -11,10 +11,10 @@ router.get("/", passport.authenticate("google", {
 // Google OAuth callback route
 router.get('/home', passport.authenticate("google", { failureRedirect: '/login' }),
      (req, res) => {
-        const token=jwt.sign({username:req.user.username,email:req.user.email},"B4t2F13Y",{
+        const token=jwt.sign({username:req.user.username,email:req.user.email,cityname:req.user.cityname},"B4t2F13Y",{
             expiresIn:"1h",
         });
-        res.cookie("jwt",token,{secure:false,maxAge:1000*60});
+        res.cookie("jwt",token,{secure:true,maxAge:1000*60});
          // Successful authentication, redirect to the home page or dashboard
          res.redirect('/home'); // Change this to the appropriate landing page after login
      }

@@ -6,382 +6,1587 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/hhvpyail8kgadixa75ho.png" type="image/x-icon">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@100..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    font-family: poppins, sans-serif;
-}
-.landinglayout{
-    overflow: hidden;
-    background-color: #FFFFFF;
-}
+    html{
+        scroll-behavior: smooth;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "Urbanist", sans-serif;
+    }
 
-.branding {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    .landinglayout {
+        overflow: hidden;
+        background-color: #FFFFFF;
+    }
 
-}
+    .branding {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
-.logo {
-    height: 60px;
-    width: 75px;
-}
+    }
 
-.nav {
-    flex-wrap: wrap;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 20px;
-    gap: 40px;
-    text-decoration: none;
-    color: #315945;
+    .logo {
+        height: 60px;
+        width: 75px;
+    }
 
-}
+    .nav {
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px;
+        gap: 40px;
+        text-decoration: none;
+        color: #315945;
 
-.header {
-    /* background-color: red; */
-    margin: 0px;
-    padding: 40px 0 20px 100px;
-    /* Remove or change this property */
-    overflow: visible; /* or simply remove this line */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 90%;
-    align-items: center;
+    }
 
-}
-/* .headerinner{
+    .header {
+        /* background-color: red; */
+        margin: 0px;
+        padding: 20px 0 20px 100px;
+        /* Remove or change this property */
+        overflow: visible;
+        /* or simply remove this line */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        align-items: center;
+
+    }
+
+    /* .headerinner{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     overflow: hidden;
     align-items: center;
     width: 100%; */
-/* } */
-.brandname{
-    font-family: poppins,sans-serif;
-    font-weight: bold;
-    align-items: center;
-    font-size: 24px;
-    padding: 10px;
-    justify-content: center;
-    color: #33644B  ;
+    /* } */
+    .brandname {
+        font-family: poppins, sans-serif;
+        font-weight: bold;
+        align-items: center;
+        font-size: 24px;
+        padding: 10px;
+        justify-content: center;
+        color: #33644B;
 
+    }
+
+    .uploadnavbtn {
+        width: 182px;
+        height: 42px;
+        background-color: transparent;
+        border: solid #315945 2px;
+        border-radius: 47px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 15px;
+
+
+    }
+
+    .navli {
+        color: #000000;
+        text-decoration: none;
+        font-weight: normal;
+        padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .circleiconnav {
+        height: 42px;
+        width: 42px;
+        position: relative;
+        /* bottom:5px;
+    right: 2px; */
+        align-items: left;
+        border-radius: 100px;
+
+
+    }
+
+    .uploadtextnav {
+        position: relative;
+
+    }
+
+    .inner-content {
+        text-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        padding-left: 50px;
+        padding-right: 50px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .mainplant {
+        max-width: 615px;
+        max-height: 618px;
+        align-items: right;
+        padding-right: 50px;
+        justify-content: center;
+        position: relative;
+        bottom: 40px;
+    }
+
+    .mainhead {
+        width: 525px;
+        font-size: 48px;
+        align-items: left;
+        word-wrap: break-word;
+    }
+    .user-friendly-container {
+            height: 532px;
+            width: 1440px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+        .user-friendly-image {
+            margin-left: 100px;
+            width: 441px;
+            height: 450px;
+            text-align: left;
+        }
+        .user-friendly-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .user-friendly-text {
+            width: 50%;
+            height: 229px;
+            margin-right: 20px;
+            margin-left: 250px;
+            margin-bottom: 50px;
+            align-items: top;
+        }
+        .user-friendly-text h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            width: 350px;
+            height: 36px;
+        }
+        .user-friendly-text p {
+            width: 600px;
+            height: 180px;
+            font-weight: 600;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+        .user-friendly-container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .user-friendly-text {
+            margin: 0;
+        }
+        .user-friendly-text h2 {
+            font-size: 22px;
+        }
+        .user-friendly-text p {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .user-friendly-text h2 {
+            font-size: 20px;
+        }
+        .user-friendly-text p {
+            font-size: 14px;
+        }
+    }
+
+        .why-choose-us-section {
+            background-color: #33644b;
+            overflow: hidden;
+            padding: 80px;
+        }
+
+        .why-choose-us-content {
+            display: flex;
+            gap: 20px;
+        }
+
+        .why-choose-us-text {
+            display: flex;
+            flex-direction: column;
+            width: 61%;
+        }
+
+        .why-choose-us-description {
+            margin-top: 20px;
+            z-index: 10;
+            display: flex;
+            margin-right: -48px;
+            flex-direction: column;
+            align-items: flex-start;
+            font-family: Poppins, sans-serif;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .why-choose-us-title {
+            font-size: 48px;
+            align-self: flex-end;
+        }
+
+        .instant-result-section-title {
+            padding-top: 20px;
+            font-size: 32px;
+            margin-top: 66px;
+        }
+
+        .instant-result-description {
+            padding-top: 20px;
+            font-size: 24px;
+            font-weight: 400;
+            margin-top: 13px;
+            width: 600px;
+        }
+
+        .instant-result-icon {
+            aspect-ratio: 3.62;
+            object-fit: contain;
+            object-position: center;
+            width: 214px;
+            margin-top: 32px;
+        }
+
+        .instant-result-image-container {
+            display: flex;
+            flex-direction: column;
+            width: 39%;
+        }
+
+        .instant-result-image {
+            aspect-ratio: 1.01;
+            object-fit: contain;
+            object-position: center;
+            width: 100%;
+            margin-top: 50px;
+            flex-grow: 1;
+        }
+
+        @media (max-width: 991px) {
+            .why-choose-us-section {
+                padding: 0 20px;
+            }
+
+            .why-choose-us-content {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .why-choose-us-text,
+            .instant-result-image-container {
+                width: 100%;
+            }
+
+            .why-choose-us-description {
+                max-width: 100%;
+                margin-top: 40px;
+            }
+
+            .why-choose-us-title {
+                font-size: 40px;
+            }
+
+            .instant-result-section-title {
+                margin-top: 40px;
+            }
+
+            .instant-result-description {
+                max-width: 100%;
+            }
+
+            .instant-result-image {
+                max-width: 100%;
+                margin-top: 40px;
+            }
+        }
+        
+    .paramain {
+        text-wrap: wrap;
+        max-width: 487px;
+        word-wrap: break-word;
+        align-items: last;
+        display: flex;
+        flex-wrap: wrap;
+        color: #315945;
+        font-weight: 500;
+    }
+
+    .content-left {
+        color: #33644B;
+        padding-top: 50px;
+        padding-left: 50px;
+        gap: 5vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        word-wrap: break-word;
+        overflow: hidden;
+    }
+
+    .mainupload {
+        width: 300px;
+        height: 70px;
+        background-color: #315945;
+        color: #FFFFFF;
+        /* border:solid #315945 2px; */
+        border-radius: 47px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .testimonial-section {
+    text-align: left;
+    padding: 40px;
+    background-color: #f7fcf8;
+    overflow: hidden;
 }
-.uploadnavbtn{
-    width: 182px;
-    height: 42px;
-    background-color: transparent;
-    border:solid #315945 2px;
-    border-radius: 47px;
-    align-items: center;
+
+.testimonial-title {
+    font-size: 36px;
+    color: #33644B;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeInDown 1s ease;
+}
+
+.testimonial-content {
     display: flex;
     justify-content: space-between;
-    padding-right: 15px;
-    
-
+    align-items: center;
+    background-color: #e4ffeb;
+    border-radius: 30px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease;
 }
-.navli{
+
+.testimonial-message {
+    max-width: 50%;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    animation: slideInLeft 1s ease;
+}
+
+.testimonial-author {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #2b5334;
+}
+
+.testimonial-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInRight 1s ease;
+}
+
+.testimonial-image {
+    border-radius: 30px;
+    height: 350px;
+    width: 300px;
+    object-fit: cover;
+}
+
+@media (max-width: 991px) {
+    .testimonial-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .testimonial-message {
+        max-width: 100%;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-image {
+        height: 250px;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-title {
+        font-size: 28px;
+    }
+
+    .testimonial-message {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .testimonial-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+    .uploadtextmain {
+        font-weight: 600;
+        font-size: 16px;
+
+    }
+
+    .mainiconupload {
+
+        width: 40px;
+        height: 40px;
+        border-radius: 55px
+    }
+
+    .workcont {
+        display: flex;
+        max-height: 574;
+        width: 100%;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .box1howit {
+        width: 276px;
+        height: 327px;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 61px;
+        gap: 30px;
+        box-shadow: 20px black;
+    }
+
+    .box1howit p {
+        width: 201px;
+        font-size: 20px;
+    }
+
+    .box1howit h3 {
+        font-weight: 500;
+    }
+
+    .howithead {
+        margin: 40px;
+        align-self: center;
+        font-size: 36px;
+        font-weight: 500;
+        color: #33644B;
+    }
+
+    .cameraicon {
+        width: 78px;
+        height: 78px;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .howitworkscontent {
+        height: 450px;
+        align-content: center;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+        overflow: hidden;
+    }
+
+    .boxes3 {
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: auto;
+        flex-wrap: wrap;
+        overflow: hidden;
+        background-color: #FFFFFF;
+    }
+    .icon-button {
+    background-color: transparent; /* Make the background transparent */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor on hover */
+    padding: 10px; /* Add some padding around the image */
+    outline: none; /* Remove outline */
+    transition: transform 0.2s; /* Add a smooth transform effect */
+}
+
+.icon-button:hover {
+    transform: scale(1.05); /* Scale up on hover for a nice effect */
+}
+
+.instant-result-icon {
+    width: 200px; /* Set a width for the icon */
+    height: auto; /* Maintain aspect ratio */
+}
+    .nav {
+        background-color: #FFFFFF;
+        /* Background color for the navbar */
+        padding: 10px;
+        position: relative;
+        
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn {
+        background-color: transparent;
+        /* Transparent background */
+        color: #33644B;
+        /* Button text color */
+        padding: 10px 20px;
+        /* Padding for the button */
+        border: none;
+        /* No border */
+        cursor: pointer;
+        /* Pointer cursor on hover */
+        font-size: 16px;
+        /* Font size */
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .dropbtn img {
+    margin-right: 8px; /* Adds some space between icon and username */
+    vertical-align: middle;
+}
+
+
+    .dropdown-content {
+        display: none;
+        /* Hide dropdown initially */
+        position: absolute;
+        background-color: #fff;
+        /* Background color */
+        min-width: 160px;
+        /* Minimum width */
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        /* Shadow */
+        z-index: 1;
+        /* Layering */
+        border-radius: 10px;
+        /* Rounded corners */
+        justify-content: center;
+    }
+
+    .dropdown-content a {
+        color: black;
+        /* Text color */
+        padding: 12px 16px;
+        /* Padding */
+        text-decoration: none;
+        /* Remove underline */
+        display: block;
+        /* Block display */
+        text-align: center;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #e0e0e0;
+        /* Hover effect */
+    }
+
+    /* Show the dropdown when the button is clicked */
+    .show {
+        display: block;
+        /* Show dropdown */
+    }
+
+
+    .temperature-value {
+        font-size: 40px;
+    }
+
+    .weather-container {
+        background-color: #fff;
+        overflow: hidden;
+        padding: 69px 80px 138px;
+    }
+
+    .weather-content {
+        gap: 20px;
+        display: flex;
+    }
+
+    .weather-image-column {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 36%;
+    }
+
+    .weather-image {
+        aspect-ratio: 1.06;
+        object-fit: contain;
+        object-position: center;
+        width: 90%;
+        flex-grow: 1;
+    }
+
+    .weather-info-column {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 64%;
+        margin-left: 20px;
+    }
+
+    .weather-info-wrapper {
+        display: flex;
+        margin-top: 31px;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .weather-details {
+        width: 100%;
+    }
+
+    /* .location-column { display: flex; flex-direction: column; line-height: normal; width: 41%; }
+        .location-info { display: flex; flex-grow: 1; flex-direction: column; font-family: Poppins, sans-serif; white-space: nowrap; }
+        .location-name { color: #000; font-size: 24px; font-weight: 500; align-self: end; margin-right: 30px; }
+        .temperature { color: #33644b; font-size: 96px; font-weight: 700; } */
+    .location-column {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 41%;
+    }
+
+    .location-info {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        font-family: Poppins, sans-serif;
+        white-space: nowrap;
+    }
+
+    .location-name {
+        display: flex;
+        /* Make the location name and icon a flex container */
+        align-items: center;
+        /* Vertically align the text to the center of the icon */
+        color: #000;
+        font-size: 24px;
+        font-weight: 500;
+        margin-right: 30px;
+    }
+
+    .temperature {
+        color: #33644b;
+        font-size: 96px;
+        font-weight: 700;
+    }
+
+    .stats-column {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 47%;
+        margin-left: 20px;
+    }
+
+    .stats-container {
+    border-radius: 27px;
+    background-color: #33644b;
+    display: flex;
+    align-items: start;
+    gap: 40px 62px;
+    color: #fff;
+    width: auto;
+    padding: 26px 67px 44px;
+    font: 600 56px Poppins, sans-serif; /* Increased font size */
+}
+
+.wind_humid_speed {
+    font-size: 34px; /* Adjusted font size for individual stats */
+}
+
+.units {
+    font-size: 20px; /* Adjusted font size for units */
+}
+
+    .units{
+        font-size: 25px;
+    }
+
+    .weather-description {
+        color: #000;
+        margin-top: 6px;
+        font: 400 20px , sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .weather-container {
+            padding: 0 20px 100px;
+        }
+
+        .weather-content {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .weather-image-column {
+            width: 100%;
+        }
+
+        .weather-image {
+            margin-top: 40px;
+        }
+
+        .weather-info-column {
+            width: 100%;
+        }
+
+        .weather-info-wrapper {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+
+        .weather-details {
+            max-width: 100%;
+            margin-right: 10px;
+        }
+
+        .location-column {
+            width: 100%;
+        }
+
+        .location-info {
+            margin-top: 40px;
+            white-space: initial;
+        }
+
+        .location-name {
+            margin-right: 10px;
+        }
+
+        .temperature {
+            font-size: 40px;
+        }
+
+        .stats-column {
+            width: 100%;
+        }
+
+        .stats-container {
+            margin-top: 40px;
+            font-size: 40px;
+            padding: 0 20px;
+        }
+
+        .weather-description {
+            max-width: 100%;
+        }
+    }
+    .landinglayout {
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+/* Branding */
+.branding {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    width: 75px;
+    transition: transform 0.3s;
+}
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Header and Navigation */
+.header {
+    margin: 0;
+    padding: 20px 0 20px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+    color: #315945;
+}
+
+.navli {
     color: #000000;
     text-decoration: none;
     font-weight: normal;
     padding: 15px;
     display: flex;
-    flex-wrap: wrap;
-}
-.circleiconnav{
-    height: 42px;
-    width: 42px;
     position: relative;
-    /* bottom:5px;
-    right: 2px; */
-    align-items: left;
-    border-radius: 100px;
-    
-    
+    overflow: hidden;
+    transition: color 0.3s;
 }
-.uploadtextnav{
-    position: relative;
 
+.navli:hover {
+    color: #33644B;
 }
-.inner-content{
-    text-wrap: wrap;
+
+/* Inner Content */
+.inner-content {
     display: flex;
     flex-direction: row;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 0 50px;
     justify-content: space-between;
-    flex-wrap: wrap;
-}
-.mainplant{
-    max-width: 615px;
-    max-height:618px;
-    align-items: right;
-    padding-right: 50px;
-    justify-content: center;
-    position: relative;
-    bottom: 40px; 
 }
 
-.mainhead{
-    width: 525px;
-    font-size: 48px;
-    align-items: left;
-    word-wrap: break-word;
+.mainplant {
+    max-width: 615px;
+    max-height: 618px;
+    position: relative;
+    bottom: 40px;
+    transition: transform 0.5s ease;
 }
-.paramain{
-    text-wrap: wrap;
+.mainplant:hover {
+    transform: scale(1.05);
+}
+
+/* Main Headings */
+.mainhead {
+    font-size: 48px;
+    width: 525px;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Main Paragraph */
+.paramain {
     max-width: 487px;
-    word-wrap: break-word;
-    align-items: last;
-    display: flex;
-    flex-wrap: wrap;
     color: #315945;
     font-weight: 500;
 }
-.content-left{
-    color: #33644B;
-    padding-top:50px ;
-    padding-left: 50px;
-    gap: 5vh;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    word-wrap: break-word;
-}
-.mainupload{
+
+/* Button Styling */
+.mainupload {
     width: 300px;
     height: 70px;
-    background-color:#315945;
+    background-color: #315945;
     color: #FFFFFF;
-    /* border:solid #315945 2px; */
     border-radius: 47px;
-    align-items: center;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     padding: 20px;
+    transition: background-color 0.3s ease;
+}
+.mainupload:hover {
+    background-color: #274a36;
+}
+
+/* Button Text and Icon */
+.uploadtextmain {
+    font-weight: 600;
+    font-size: 16px;
+}
+.hamburger {
+        display: none;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
     }
-    .uploadtextmain{
-        font-weight: 600;
+    .nav.show {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+.mainiconupload {
+    width: 40px;
+    height: 40px;
+    border-radius: 55px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .mainhead {
+        font-size: 40px;
+    }
+
+    .paramain {
         font-size: 16px;
-        
     }
-    .mainiconupload{
-        
-        width: 40px;
-        height: 40px;
-        border-radius: 55px
-    }
-    .workcont{
-    display: flex;
-    max-height:574;
-    width: 100%;
-    flex-direction: column;
-        
 
+    .mainupload {
+        width: 250px;
+        height: 60px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 10px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav {
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+    .inner-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mainhead {
+        font-size: 36px;
+        width: 100%;
+    }
+
+    .paramain {
+        max-width: 90%;
+        font-size: 16px;
+    }
+
+    .mainplant {
+        width: 80%;
+        max-width: 450px;
+        max-height: auto;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .branding {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .logo {
+        height: 45px;
+        width: 55px;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 10px;
+    }
+
+    .logo {
+        height: 50px;
+        width: 60px;
+    }
+
+    .mainhead {
+        font-size: 28px;
+    }
+
+    .paramain {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .mainupload {
+        width: 180px;
+        height: 50px;
+    }
+
+    .uploadtextmain {
+        font-size: 14px;
+    }
+
+    .mainiconupload {
+        width: 35px;
+        height: 35px;
+    }
+}
+@media (max-width: 768px) {
+        .nav {
+            display: none; /* Hide the nav by default */
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hamburger {
+            display: block; /* Show hamburger on small screens */
+        }
+    }
+    /* Resetting default margin and padding */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Body style for the FAQ section */
     
-}
-.box1howit{
-    width:276px ;
-    height: 327px;
-    background-color: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-radius: 61px;
-    gap: 30px;
-    box-shadow: 20px black;
-}
-.box1howit p{
-    width: 201px;
-    font-size: 20px;
-}
-.box1howit h3{
-    font-weight: 500;
-}
-.howithead{
-    margin: 40px;
-    align-self: center;
-    font-size: 36px;
-    font-weight: 500;
-    color: #33644B;
-}
-.cameraicon{
-    width: 78px;
-    height: 78px;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
-.howitworkscontent{
-    height: 450px;
-    align-content: center;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-.boxes3{
-    padding-left: 30px;
-    padding-right: 30px;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: auto;
-    flex-wrap: wrap;
-}
-.nav {
-    background-color:transparent; /* Background color for the navbar */
-    padding: 10px;
-    position: relative;
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
+
+    /* Container for all FAQ items */
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    /* Individual FAQ item styles */
+    .faq-item {
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+    }
+
+    /* Title of each question */
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+        font-weight:600;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .faq-question:hover {
+        color: #4CAF50; /* Green color on hover */
+    }
+
+    /* Icon for toggling answers */
+    .faq-toggle {
+        font-size: 2rem;
+        font-weight:400px;
+        color: #888;
+        transition: transform 0.3s ease;
+    }
+
+    .faq-toggle.open {
+        transform: rotate(45deg); /* Rotating the "+" icon when open */
+    }
+
+    /* Answer style, initially hidden */
+    .faq-answer {
+        display: none;
+        font-size: 1.2rem;
+        color: #666;
+        margin-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        line-height: 1.5;
+    }
+
+    /* Transition for answer visibility */
+    .faq-item.open .faq-answer {
+        display: block;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    /* Add a 3D spin effect when the icon is opened */
+.faq-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #888;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d; /* Preserves 3D rotation */
 }
 
-.dropbtn {
-    background-color: transparent; /* Transparent background */
-    color: #33644B; /* Button text color */
-    padding: 10px 20px; /* Padding for the button */
-    border: none; /* No border */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-}
-
-.dropdown-content {
-    display: none; /* Hide dropdown initially */
-    position: absolute;
-    background-color: #fff; /* Background color */
-    min-width: 160px; /* Minimum width */
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Shadow */
-    z-index: 1; /* Layering */
-    border-radius: 10px; /* Rounded corners */
-    justify-content: center;
-}
-
-.dropdown-content a {
-    color: black; /* Text color */
-    padding: 12px 16px; /* Padding */
-    text-decoration: none; /* Remove underline */
-    display: block; /* Block display */
-}
-
-.dropdown-content a:hover {
-    background-color: #e0e0e0; /* Hover effect */
-}
-
-/* Show the dropdown when the button is clicked */
-.show {
-    display: block; /* Show dropdown */
+.faq-toggle.open {
+    transform: rotateY(180deg); /* Spins the icon 180 degrees in 3D */
 }
 
 
+    /* Animation for sliding down the answer */
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
+    /* Styling for responsive behavior */
+    @media (max-width: 600px) {
+        .faq-container {
+            padding: 15px;
+        }
+
+        .faq-question {
+            font-size: 1rem;
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+        }
+    }
 </style>
+
 
 <body>
     <div class="landinglayout">
         <div class="header">
             <!-- <div class="headerinner"> -->
-                <div class="branding">
-                    <img href="/home" class="logo" src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/hhvpyail8kgadixa75ho.png" alt="logo">
-    
-                    <span class="brandname">Agrolens</span>
-                </div>
-                <div class="nav">
-                    <a class="navli" href="#">Home</a>
-                    <a class="navli" id="aboutusbt" href="#">About us</a>
-                    <a class="navli" onclick="scrollToElement()">Process</a>
-                    
-                    <% if (user || token) { %>
-                        <div class="dropdown">
-                            <button class="dropbtn"><%= user.username %>▼</button>
-                            <div class="dropdown-content">
-                                <a href="/logout">Logout</a>
-                                
-                                <a href="#">profile</a>
-                            </div>
+            <div class="branding">
+                <img href="/home" class="logo"
+                    src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/hhvpyail8kgadixa75ho.png"
+                    alt="logo">
+
+                <span class="brandname">Agrolens</span>
+            </div>
+            <div class="hamburger">
+                <span class="hamburger-icon">&#9776;</span>
+            </div>
+            <div class="nav" id="navbar">
+                <a class="navli" href="#">Home</a>
+                <a class="navli" id="aboutusbt" href="#">About us</a>
+                <a class="navli" href="#work_cont">Process</a>
+                <% if (user || token) { %>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <span><img src="https://res.cloudinary.com/danebk4br/image/upload/v1730821336/lzrmkyjgcbxj32xhvqqh.png" alt="profileicon" style="height: 24px; align-self: center;"></span><%= user.username %>▼
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="/logout">Logout</a>
+                            <a href="/profile">profile</a>
                         </div>
+                    </div>
                     <% } else { %>
                         <a class="navli" href="/login">Login</a>
-                    <% } %>
-                    
-                    <!-- <button class="uploadnavbtn" onclick="window.location.href='/upload'">
+                        <% } %>
+
+                            <!-- <button class="uploadnavbtn" onclick="window.location.href='/upload'">
                         <img class="circleiconnav" src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/n3nghi8tfi8loenawhfd.png" alt="photo">
                         <span class="uploadtextnav">Upload photo</span>
                     </button> -->
-                </div>
-                
+            </div>
+
             <!-- </div> -->
         </div>
-            <div class="inner-content">
-                <div class="content-left">
-                    <h1 class="mainhead">Diagnose Plant Health with Agrolens</h1>
-                    <p class="paramain">AgroLens uses advanced technology to analyze leaf photos and detect plant
-                        diseases instantly. Upload a photo to get quick, accurate insights and keep your plants healthy
-                        and thriving.Instant results through just one click</p>
-                    <button onclick="window.location.href='/upload'" class="mainupload">
-                        <img class="mainiconupload" src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/krzccbpvrsxlzc1xktbu.png" alt="photo">
-                        <span class="uploadtextmain">Upload photo</span>
-                    </button>
-                </div>
-                <div class="content-right">
-                    <img class="mainplant" src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094314/lu9mlzwxynaldcmw4tww.png" alt="mainplants">
-                </div>
+        <div class="inner-content">
+            <div class="content-left">
+                <h1 class="mainhead">Diagnose Plant Health with Agrolens</h1>
+                <p class="paramain">AgroLens uses advanced technology to analyze leaf photos and detect plant
+                    diseases instantly. Upload a photo to get quick, accurate insights and keep your plants healthy
+                    and thriving.Instant results through just one click</p>
+                <button onclick="window.location.href='/upload'" class="mainupload" style="cursor: pointer;">
+                    <img class="mainiconupload"
+                        src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/krzccbpvrsxlzc1xktbu.png"
+                        alt="photo">
+                    <span class="uploadtextmain">Upload photo</span>
+                </button>
             </div>
+            <div class="content-right">
+                <img class="mainplant"
+                    src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094314/lu9mlzwxynaldcmw4tww.png"
+                    alt="mainplants">
+            </div>
+        </div>
     </div>
-    <div class="workcont"></div>
-        <div class="howithead" style="text-align:center"><h3>How it works?</h3></div>
-        <div class="howitworkscontent">
+    <div id="work_cont"class="workcont">
+        <div class="howithead" style="text-align:center">
+            <h3>How it works?</h3>
+        </div>
+        <div id="how_it_works_content" class="howitworkscontent">
             <div class="boxes3">
                 <div class="box1howit">
-                    <img class= "cameraicon"src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/nhyjauciy3crln5mpm9j.png" alt="">
+                    <img class="cameraicon"
+                        src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/nhyjauciy3crln5mpm9j.png" alt="">
                     <h3>Upload a photo</h3>
                     <p>Take a clear picture of the affected leaf and upload it.</p>
                 </div>
                 <div class="box1howit">
-                    <img class= "cameraicon"src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/l4wrlfy81zfnuheevuei.png" alt="">
+                    <img class="cameraicon"
+                        src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094717/l4wrlfy81zfnuheevuei.png" alt="">
                     <h3>Analyzing</h3>
                     <p>Take a clear picture of the affected leaf and upload it.</p>
                 </div>
                 <div class="box1howit">
-                    <img class= "cameraicon"src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094718/o5bt7zdpkhwqczgzrumc.png" alt="">
+                    <img class="cameraicon"
+                        src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1727094718/o5bt7zdpkhwqczgzrumc.png" alt="">
                     <h3>Insant Results</h3>
                     <p>Take a clear picture of the affected leaf and upload it.</p>
                 </div>
             </div>
         </div>
+        </div>
     </div>
-    <script>
-        function scrollToElement(){
-            const process=document.getElementsByClassName("workcont")[0];
-            process.scrollIntoView({ behavior: 'smooth' });
-        }
-        document.querySelector('.dropbtn').addEventListener('click', function() {
-    const dropdownContent = document.querySelector('.dropdown-content');
-    dropdownContent.classList.toggle('show');
-});
 
-// Close the dropdown if the user clicks outside of it
-window.addEventListener('click', function(event) {
-    if (!event.target.matches('.dropbtn')) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-            const openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
+
+    <section class="why-choose-us-section">
+        <div class="why-choose-us-content">
+            <div class="why-choose-us-text">
+                <div class="why-choose-us-description">
+                    <h2 class="why-choose-us-title">Why Choose Us?</h2>
+                    <h3 class="instant-result-section-title">Instant Results</h3>
+                    <p class="instant-result-description">
+                        Agro Lens provides rapid and precise disease detection. Our advanced image recognition technology analyzes your leaf photos in seconds, giving you immediate feedback on plant health issues. With our real-time results, you can quickly address potential problems before they escalate.
+                    </p>
+                    <a href="/upload" class="icon-button" >
+                        <img src="https://cdn.builder.io/api/v1/image/assets/8c23630f5c8c4170a1fa12a453fe1602/11fc470df86dcad078206d1a9944cd64835f50a388cbafd710a0c94cdd98f963?apiKey=8c23630f5c8c4170a1fa12a453fe1602&" alt="Instant results icon" class="instant-result-icon"/>
+                    </a>               
+                </div>
+            </div>
+            <div class="instant-result-image-container">
+                <img src="https://cdn.builder.io/api/v1/image/assets/8c23630f5c8c4170a1fa12a453fe1602/87023c3981fd8117bebc8e2e1aceaad30458ba2e19a0c674e6b2a328e6188b08?apiKey=8c23630f5c8c4170a1fa12a453fe1602&" alt="Plant health analysis demonstration" class="instant-result-image" />
+            </div>
+        </div>
+    </section>
+
+    <div class="user-friendly-container">
+        <div class="user-friendly-image">
+            <img src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1730656632/vxcqvjggwl3ifg1cskd0.png" alt="Icons">
+        </div>
+        <div class="user-friendly-text">
+            <h2>User-Friendly Interface</h2>
+            <p>Designed with simplicity in mind, our platform ensures a hassle-free experience. The easy-to-navigate interface allows you to upload leaf photos effortlessly, making the entire process straightforward, even for those who are not tech-savvy. Just a few clicks and you're set to go!</p>
+        </div>
+    </div>
+    <section class="weather-container">
+        <div class="weather-content">
+            <div class="weather-image-column">
+                <img loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/8c23630f5c8c4170a1fa12a453fe1602/419cafcb7f60883288a386f87714923d097e47b5a24d87e3cb37b594e04d4c25?apiKey=8c23630f5c8c4170a1fa12a453fe1602&"
+                    alt="Weather conditions visualization" class="weather-image" />
+            </div>        
+            <div class="weather-info-column">
+                <div class="weather-info-wrapper">
+                    <div class="weather-details">
+                        <div class="weather-content">
+                            <div class="location-column">
+                                <div class="location-info">
+                                    
+                                    <h2 class="location-name" id="location_name">
+                                        <span><img
+                                                src="https://img.icons8.com/?size=100&id=r9lfc22rXPaO&format=png&color=000000"
+                                                alt="locationicon"
+                                                ></span>Hyderabad
+                                    </h2>
+                                    <p class="temperature" id="temperature-value">43°C</p>
+                                </div>
+                            </div>
+                            <div class="stats-column">
+                                <div class="stats-container">
+
+                                    <p class="wind_humid_speed"><span id="wind_speed_value">45</span><span class="units">k/h</span><br>wind</p>
+                                    <p class="wind_humid_speed"><span id="wind_humid_value">45</span><br>Humidity</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="weather-description" id="temperature_message">
+                        akjfabkfjb af na fa ajhfba a abfwk ajf wafk jawf aw f jaf
+                        k hfak faw aa faek faaj faf awf af awf f alf awn fafawknf aem nafkaaef 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="testimonial-section">
+        <h1 class="testimonial-title">Testimonial</h1>
+        <div class="testimonial-content">
+            <div class="testimonial-message">
+                <p class="testimonial-text">
+                    Agro Lens has been a game-changer for our farm. The ability to detect diseases early has saved us from significant crop losses. The process is simple—just snap a photo, and within seconds, I know exactly what I’m dealing with. The expert recommendations have helped me take immediate action, and the results have been incredible. Thanks to Agro Lens, my crops are healthier, and my yields have improved significantly. It’s a must-have tool for any farmer!
+                </p>
+                <p class="testimonial-author">- Rajashekhar, Nagole.</p>
+            </div>
+            <div class="testimonial-image-container">
+                <img src="https://res.cloudinary.com/dl0thhfbc/image/upload/v1730701557/zldouqi3mkw6zguye4ei.png" alt="Farmer" class="testimonial-image">
+            </div>
+        </div>
+    </section>
+    <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does Agro Lens detect plant diseases from a photo?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Agro Lens uses advanced image recognition technology and machine learning to analyze leaf images for visible signs of diseases and pests.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I use Agro Lens without an internet connection?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! Agro Lens offers an offline mode for basic disease detection, so you can still scan leaves and get preliminary results even in remote areas.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What should I do if Agro Lens doesn’t identify the disease correctly?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            If the disease detection seems incorrect, try capturing a clearer image. You can also consult our disease photo library or community forum.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Does Agro Lens provide organic and eco-friendly treatment options?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes, Agro Lens includes recommendations for both conventional and organic treatments, including eco-friendly solutions like neem oil and natural pest repellents.
+          </div>
+        </div>
+      </div>
+      
+    
+    
+    <script>
+    // Select all FAQ question elements
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        // Add a click event listener to each question
+        const question = item.querySelector('.faq-question');
+        const toggleIcon = item.querySelector('.faq-toggle');
+
+        question.addEventListener('click', () => {
+            item.classList.toggle('open');
+            // Toggle the "+" icon to a "×" icon when open
+            toggleIcon.classList.toggle('open');
+        });
+    });
+
+
+
+  
+        document.querySelector('.dropbtn').addEventListener('click', function () {
+            const dropdownContent = document.querySelector('.dropdown-content');
+            dropdownContent.classList.toggle('show');
+        });
+
+        // Close the dropdown if the user clicks outside of it
+        window.addEventListener('click', function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdowns = document.getElementsByClassName("dropdown-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
             }
+        });
+
+       
+        async function fetchWeatherData(location) {
+        try {
+            const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=4b16cdce5f5106a911d7cb77652ef4df`);
+            const weatherData = await weatherResponse.json();
+            
+
+            if (weatherData.main) {
+                const temperature=Math.round(weatherData.main.temp - 273.15)
+                document.getElementById("temperature-value").innerText = `${Math.round(weatherData.main.temp - 273.15)}°C`;
+                document.getElementById("wind_speed_value").innerText = weatherData.wind.speed;
+                document.getElementById("wind_humid_value").innerText = weatherData.main.humidity;
+                
+                let message = '';
+            if (temperature < 10) {
+                message = `In ${location}, temperatures are quite chilly, dipping below 10°C. During these colder months, it's crucial to protect your plants from frost damage. Consider using frost cloths or moving potted plants indoors. Ensure your plants are well-watered, but avoid over-watering, as the cold can slow down their growth.`;
+            } else if (temperature >= 10 && temperature < 20) {
+                message = `The current temperature in ${location} is mild, ranging from 10°C to 20°C. This is a great time to plant hardy varieties such as kale or pansies, which thrive in cooler weather. Be vigilant for any signs of fungal diseases, which can be more prevalent in humid conditions, and ensure proper airflow around your plants.`;
+            } else if (temperature >= 20 && temperature < 30) {
+                message = `With temperatures in ${location} hovering between 20°C and 30°C, it's the ideal weather for vibrant plant growth! This is a fantastic opportunity to water your plants regularly and consider applying a balanced fertilizer to boost their health. Keep an eye out for pests, as warmer weather can bring about an increase in insect activity.`;
+            } else {
+                message = `In the heat of ${location}, where temperatures exceed 30°C, it's essential to keep your plants hydrated. Water deeply in the early morning or late evening to prevent evaporation. Additionally, provide some shade for delicate plants to protect them from sunburn. Monitor for signs of heat stress, such as wilting or leaf scorch, and adjust your care accordingly.`;
+            }
+
+            // Display the message
+            document.getElementById("temperature_message").innerText = message;
+            } else {
+                console.error("Weather data not found");
+            }
+        } catch (error) {
+            console.error("Error fetching weather data:", error);
         }
     }
+    document.querySelector(".hamburger").addEventListener("click", function () {
+    document.querySelector(".nav").classList.toggle("show");
 });
 
+    function fetchLocationAndWeather() {
+        fetch("https://api.geoapify.com/v1/ipinfo?apiKey=5957af732c504572906fef3d5a2c9b8f")
+            .then(response => response.json())
+            .then(data => {
+                console.log("IP Info Data:", data);
+                const location = data.city?.name || data.city;
 
+                if (location) {
+                    document.getElementById("location_name").innerHTML = `<span><img
+                                                src="https://img.icons8.com/?size=100&id=r9lfc22rXPaO&format=png&color=000000"
+                                                alt="locationicon"
+                                                ></span>${location}`;
+                    
+                    fetchWeatherData(location).then(temperature => {
+                        console(temperature,"fetched")
+                    if (temperature !== undefined) {
+                        let message = '';
+                        if (temperature < 10) {
+                            message = `In ${location}, temperatures are quite chilly, dipping below 10°C. During these colder months, it's crucial to protect your plants from frost damage. Consider using frost cloths or moving potted plants indoors. Ensure your plants are well-watered, but avoid over-watering, as the cold can slow down their growth.`;
+                        } else if (temperature >= 10 && temperature < 20) {
+                            message = `The current temperature in ${location} is mild, ranging from 10°C to 20°C. This is a great time to plant hardy varieties such as kale or pansies, which thrive in cooler weather. Be vigilant for any signs of fungal diseases, which can be more prevalent in humid conditions, and ensure proper airflow around your plants.`;
+                        } else if (temperature >= 20 && temperature < 30) {
+                            message = `With temperatures in ${location} hovering between 20°C and 30°C, it's the ideal weather for vibrant plant growth! This is a fantastic opportunity to water your plants regularly and consider applying a balanced fertilizer to boost their health. Keep an eye out for pests, as warmer weather can bring about an increase in insect activity.`;
+                        } else {
+                            message = `In the heat of ${location}, where temperatures exceed 30°C, it's essential to keep your plants hydrated. Water deeply in the early morning or late evening to prevent evaporation. Additionally, provide some shade for delicate plants to protect them from sunburn. Monitor for signs of heat stress, such as wilting or leaf scorch, and adjust your care accordingly.`;
+                        }
+
+                        // Display the message
+                        document.getElementById("temperature_message").innerText = message;}})
+
+                } else {
+                    console.error("Location name not found in IP info response");
+                }
+            })
+            .catch(error => console.error("Error fetching IP info:", error));
+    }   
+    // Call fetchLocationAndWeather on page load
+    document.addEventListener("DOMContentLoaded", fetchLocationAndWeather);
     </script>
+    <!-- <script src="/public/home.js"></script> -->
 </body>
 
 </html>

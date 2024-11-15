@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const users = require("../models/userschema");
 const jwt = require("jsonwebtoken");
-const maxAge=1000*60;
+const maxAge=1000*60*60;
+const {getCityName}=require("../geolocation");
 router.get("/", (req, res) => {
   res.render("login/login", { error: null });
 });
-
 router.post("/", async (req, res) => {
   const { email, password } = req.body;
 
@@ -19,17 +19,21 @@ router.post("/", async (req, res) => {
       return res.render("login/login", { error: "Invalid email" });
     }
 
+
+
     // Since bcrypt is not used, directly compare the plain text passwords
     if (password !== user.password) {
       return res.render("login/login", { error: "Invalid password" });
     }
-    const token = jwt.sign({ id: user._id, email: user.email, username: user.name }, "B4t2F13Y", { expiresIn: "1h" });
+    const city = await getCityName;
+    console.log(city);
+    const token = jwt.sign({ id: user._id, email: user.email, username: user.name,cityname:city }, "B4t2F13Y", { expiresIn: "1h" });
 
     // Set token as a cookie
     res.cookie("jwt", token, {
       httpOnly: true,
       maxAge: maxAge,
-      secure: false,
+      secure: true,
       path: "/",
     });
     

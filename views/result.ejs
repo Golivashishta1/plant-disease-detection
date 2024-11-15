@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Urbanist", sans-serif;
+    }
+
+    body {
+        background-color: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #ffffff;
+        border-radius: 16px;
+        padding: 20px;
+        max-width: 1000px;
+        width: 90%;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .image-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        width: 80%;  /* Smaller image size */
+        max-width: 500px;
+        height: auto;
+        border-radius: 12px;
+        margin-bottom: 15px;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .bento-box {
+        display: flex;
+        flex-direction: column;
+        background-color: #fafafa;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .bento-box:hover {
+        transform: translateY(-5px);
+    }
+
+    .section-title {
+        font-size: 18px;
+        color: #4a4a4a;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 5px;
+    }
+
+    .result p,
+    .section p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+        margin: 8px 0;
+    }
+
+    .result {
+        margin-bottom: 15px;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+
+    .back-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #0056b3;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        width: 100%;
+        transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+        background-color: #357ABD;
+    }
+
+    /* Two-column layout for details (bottom part) */
+    .details-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .details-column {
+        flex: 1;
+        min-width: 300px;
+        max-width: 48%; /* Two columns */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .details-wrapper {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .details-column {
+            max-width: 100%;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+
+        <div class="image-container">
+            <% if (image_url) { %>
+                <img src="<%= image_url %>" alt="Uploaded Image" />
+            <% } %>
+
+            <div class="result">
+                <p><strong>Predicted Disease:</strong> <%= predicted_disease %></p>
+                <p><strong>Confidence:</strong> <%= confidence %>%</p>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Details Section with Two Columns -->
+            <div class="details-wrapper">
+                <!-- Left Column -->
+                <div class="details-column">
+                    <div class="bento-box">
+                        <div class="section">
+                            <div class="section-title">Description</div>
+                            <p><%= description %></p>
+                        </div>
+                    </div>
+
+                    <div class="bento-box">
+                        <div class="section">
+                            <div class="section-title">Symptoms</div>
+                            <ul>
+                                <% symptoms.forEach(function(symptom) { %>
+                                    <li><%= symptom %></li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="details-column">
+                    <div class="bento-box">
+                        <div class="section">
+                            <div class="section-title">Treatments</div>
+                            <% treatments.forEach(function(treatment) { %>
+                                <p><strong>Name:</strong> <%= treatment.name %></p>
+                                <p><strong>Type:</strong> <%= treatment.type %></p>
+                                <p><strong>Application:</strong> <%= treatment.application %></p>
+                                <p><strong>Frequency:</strong> <%= treatment.frequency %></p>
+                                <p><strong>Effectiveness:</strong> <%= treatment.effectiveness %></p>
+                                <p><strong>Duration for Recovery:</strong> <%= treatment.duration_for_recovery %></p>
+                                <p><strong>Warnings:</strong> <%= treatment.warnings.join(", ") %></p>
+                                <hr>
+                            <% }); %>
+                        </div>
+                    </div>
+
+                    <div class="bento-box">
+                        <div class="section">
+                            <div class="section-title">Pests</div>
+                            <% pests.forEach(function(pest) { %>
+                                <p><strong>Name:</strong> <%= pest.name %></p>
+                                <p><strong>Control Measures:</strong> <%= pest.control_measures %></p>
+                                <p><strong>Warnings:</strong> <%= pest.warnings.join(", ") %></p>
+                                <hr>
+                            <% }); %>
+                        </div>
+                    </div>
+
+                    <div class="bento-box">
+                        <div class="section">
+                            <div class="section-title">Fertilizers</div>
+                            <% fertilizers.forEach(function(fertilizer) { %>
+                                <p><strong>Name:</strong> <%= fertilizer.name %></p>
+                                <p><strong>Application:</strong> <%= fertilizer.application %></p>
+                                <p><strong>Effectiveness:</strong> <%= fertilizer.effectiveness %></p>
+                                <p><strong>Warnings:</strong> <%= fertilizer.warnings.join(", ") %></p>
+                                <hr>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <a href="/upload" class="back-button">Upload Another Image</a>
+    </div>
+</body>
+</html>

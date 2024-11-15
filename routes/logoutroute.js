@@ -6,6 +6,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
     if(req.cookies.jwt){
         res.cookie("jwt","",{maxAge:1});
+        res.clearCookie("jwt"); // Clear JWT cookie
     return res.redirect("/home");
     }
     

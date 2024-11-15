@@ -4,6 +4,7 @@ const { homeget } = require("../controllers/homecontrol");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const secretKey = "B4t2F13Y"; // Use your secret key
+const axios = require("axios");
 
 router.get("/", (req, res) => {
   const token = req.cookies.jwt; // Get the token from cookies
@@ -24,9 +25,3 @@ router.get("/", (req, res) => {
 });
 
 module.exports = router;
-
-
-
-
-
-module.exports=router;

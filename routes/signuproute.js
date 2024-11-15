@@ -59,7 +59,7 @@ router.post("/", async (req, res) => {
         
 
         // Send the email
-        await transporter.sendMail(mailOptions);
+        transporter.sendMail(mailOptions);
         console.log(`Email sent to ${name}`);
 
         res.render("login/login", { error: null });
@@ -67,7 +67,7 @@ router.post("/", async (req, res) => {
     }
         // Create the user in the database
       else{
-        res.render("login/login", { error: null });
+        res.redirect("/login");
 
       }  
         // Redirect to login page after successful signup
