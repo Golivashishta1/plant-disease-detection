@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Care Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Loading Screen Styles */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loading-text {
+      font-size: 24px;
+      color: #4caf50;
+    }
+
+    /* Plant Care Section */
+    .plant-care-section {
+      display: flex;
+      flex-direction: row-reverse; /* Switch to row-reverse to move the icon to the right */
+      justify-content: space-between;
+      align-items: center;
+      height: 600px;
+      background-color: #e0f7fa;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    /* Plant Icon (Replace Lottie with GIF) */
+    .plant-icon img {
+      width: 150px;
+      height: 150px;
+      position: relative;
+    }
+
+    /* Heading and Subheading */
+    .content {
+      flex: 1;
+      text-align: left;
+      padding-right: 20px; /* Adjusted for content spacing */
+    }
+
+    .heading {
+      font-size: 36px;
+      font-weight: bold;
+      color: #4caf50;
+      margin-bottom: 10px;
+    }
+
+    .subheading {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    /* Input Box */
+    .search-box {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-box input {
+      width: 300px;
+      height: 40px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 20px;
+      border: 2px solid #4caf50;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .search-box input:focus {
+      border-color: #2e7d32;
+      box-shadow: 0 0 8px rgba(46, 125, 50, 0.6);
+    }
+
+    .submit-btn {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-btn:hover {
+      background-color: #388e3c;
+    }
+
+    /* Bento Box Container */
+    .bento-boxes {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      opacity: 0;
+      height: 0;
+      transition: height 0.5s ease, opacity 1s ease;
+    }
+
+    .bento-box {
+      width: 250px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
+    }
+
+    .bento-box:hover {
+      transform: scale(1.05);
+    }
+
+    .bento-box h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #4caf50;
+    }
+
+    .bento-box p {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #4caf50;
+    }
+
+    /* Bento Box Fade-In Animation */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Expand Bento Box Container */
+    .expand {
+      height: auto;
+      opacity: 1 !important;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loading-overlay" id="loading-overlay">
+    <img src="https://res.cloudinary.com/danebk4br/image/upload/v1731830092/jionybwj4i63wgzntm40.gif" alt="Plant Care Animation" id="plant-icon-gif"> <!-- Replace with your GIF -->
+  </div>
+
+  <!-- Plant Care Section -->
+  <div class="plant-care-section">
+    <!-- Plant Icon (Replace Lottie with GIF) -->
+    <div class="plant-icon">
+      <img src="https://res.cloudinary.com/danebk4br/image/upload/v1731830092/jionybwj4i63wgzntm40.gif" alt="Plant Care Animation" id="plant-icon-gif"> <!-- Replace with your GIF -->
+    </div>
+
+    <!-- Content (Heading, Subheading, Search Box) on the left -->
+    <div class="content">
+      <div class="heading">Plant Care Search</div>
+      <div class="subheading">Search for plant care tips by entering the plant name below.</div>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Enter a plant name...">
+        <button class="submit-btn" onclick="searchPlant()">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bento Box Results Section -->
+  <div class="bento-boxes" id="bento-boxes"></div>
+
+  <script>
+    // Show loading screen until the page is loaded
+    window.onload = function() {
+      // Show the loading screen for a short time (e.g., 2 seconds)
+      setTimeout(() => {
+        const loadingOverlay = document.getElementById('loading-overlay');
+        loadingOverlay.style.display = 'none';  // Hide loading overlay after delay
+      }, 2000);  // 2-second delay to simulate loading time
+    }
+
+    // Plant care data (sample plants)
+    const plantCareData = [
+      {
+        name: "Rose",
+        light: "Full sun",
+        water: "Water regularly, prune to encourage new growth, and provide full sunlight.",
+        soil: "Well-drained, slightly acidic soil",
+        temperature: "60-70°F (15-21°C)",
+        humidity: "Medium",
+        care_tips: "Roses thrive in full sunlight, with regular watering and occasional pruning."
+      },
+      {
+        name: "Sweet Potato",
+        light: "Full sun",
+        water: "Water consistently to keep soil moist",
+        soil: "Loose, well-draining soil",
+        temperature: "75-95°F (24-35°C)",
+        humidity: "Medium",
+        care_tips: "Sweet potatoes need full sunlight and consistent moisture. Harvest before the first frost."
+      },
+      {
+        name: "Tulip",
+        light: "Full sun",
+        water: "Water regularly, but ensure good drainage.",
+        soil: "Well-draining, slightly acidic soil",
+        temperature: "50-60°F (10-15°C)",
+        humidity: "Medium",
+        care_tips: "Plant in the fall, water regularly, and ensure full sun exposure."
+      }
+    ];
+
+    // Search function to find plants
+    function searchPlant() {
+      const searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
+      const filteredPlants = plantCareData.filter(plant => plant.name.toLowerCase().includes(searchQuery));
+      
+      // Show loading overlay while simulating a delay (e.g., 3 seconds) before displaying the results
+      const loadingOverlay = document.getElementById('loading-overlay');
+      loadingOverlay.style.display = 'flex'; // Keep loading screen visible
+
+      // Simulate a delay (e.g., 3 seconds) before displaying the results
+      setTimeout(() => {
+        displayPlantCare(filteredPlants);
+        loadingOverlay.style.display = 'none'; // Hide loading screen once results are ready
+      }, 3000);  // 3-second delay
+    }
+
+    // Display the plant care details in Bento box style
+    function displayPlantCare(plants) {
+      const bentoBoxesContainer = document.getElementById('bento-boxes');
+      bentoBoxesContainer.innerHTML = ''; // Clear previous results
+
+      if (plants.length > 0) {
+        plants.forEach(plant => {
+          const bentoBox = document.createElement('div');
+          bentoBox.classList.add('bento-box');
+          bentoBox.innerHTML = `
+            <div class="icon">🌿</div>
+            <h3>${plant.name}</h3>
+            <p><strong>Light:</strong> ${plant.light}</p>
+            <p><strong>Water:</strong> ${plant.water}</p>
+            <p><strong>Soil:</strong> ${plant.soil}</p>
+            <p><strong>Temperature:</strong> ${plant.temperature}</p>
+            <p><strong>Humidity:</strong> ${plant.humidity}</p>
+            <p><strong>Care Tips:</strong> ${plant.care_tips}</p>
+          `;
+          bentoBoxesContainer.appendChild(bentoBox);
+        });
+        
+        // Expand the bento box container after search
+        bentoBoxesContainer.classList.add('expand');
+      } else {
+        const noResults = document.createElement('div');
+        noResults.textContent = 'No plant care information found for the entered plant.';
+        noResults.style.color = "#f44336";
+        bentoBoxesContainer.appendChild(noResults);
+        bentoBoxesContainer.classList.add('expand');
+      }
+    }
+  </script>
+
+</body>
+</html>

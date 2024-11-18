@@ -6,6 +6,7 @@
     <title>Prediction Result</title>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9a3IwDPu4ns9kS4BKKg7T2DIYpDDiiRk&libraries=places"></script>
 </head>
 <style>
     * {
@@ -117,6 +118,23 @@
         background-color: #357ABD;
     }
 
+    .find-shops-button {
+        display: inline-block;
+        padding: 12px;
+        background-color: #28a745;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        margin-top: 20px;
+        width: 100%;
+        transition: background-color 0.3s;
+    }
+
+    .find-shops-button:hover {
+        background-color: #218838;
+    }
+
     /* Two-column layout for details (bottom part) */
     .details-wrapper {
         display: flex;
@@ -129,6 +147,18 @@
         min-width: 300px;
         max-width: 48%; /* Two columns */
     }
+    #shopList {
+      margin-top: 20px;
+      list-style-type: none;
+      padding: 0;
+    }
+    #shopList li {
+      padding: 8px;
+      margin-bottom: 8px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -140,11 +170,47 @@
             max-width: 100%;
         }
     }
+    #loading-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #loading-screen img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        #loading-screen p {
+            font-size: 20px;
+            color: #333;
+        }
+        .upload-another{
+            display: inline-block;
+        padding: 12px;
+        background-color: #28a745;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        margin-top: 20px;
+        width: 100%;
+        transition: background-color 0.3s;
+        }
 </style>
 <body>
     <div class="container">
         <h1>Prediction Result</h1>
-
+        
         <div class="image-container">
             <% if (image_url) { %>
                 <img src="<%= image_url %>" alt="Uploaded Image" />
@@ -226,8 +292,99 @@
             </div>
         </div>
 
-        <!-- Back Button -->
-        <a href="/upload" class="back-button">Upload Another Image</a>
-    </div>
+        
+        <a href="/upload"><button class="upload-another">upload another image</button></a>
+        <!-- Find Shops Button -->
+        <button class="find-shops-button" id="findShops">Find Nearest Pest and Fertilizer Shops</button>
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places"></script>
+
+<script>
+    // Initialize the map
+    let map;
+    let service;
+    let infowindow;
+
+    function showLoadingScreen() {
+            document.getElementById("loading-screen").style.display = "flex";
+        }
+
+        // Hide loading screen
+        function hideLoadingScreen() {
+            document.getElementById("loading-screen").style.display = "none";
+        }
+
+    function initMap() {
+       
+        // Use the current location as the center of the map
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const userLat = position.coords.latitude;
+                const userLng = position.coords.longitude;
+
+                const userLocation = new google.maps.LatLng(userLat, userLng);
+                map = new google.maps.Map(document.getElementById("mapContainer"), {
+                    center: userLocation,
+                    zoom: 14,
+                });
+
+                infowindow = new google.maps.InfoWindow();
+
+                // Create a PlacesService object to query the Google Places API
+                service = new google.maps.places.PlacesService(map);
+
+                // Perform a search for nearby shops (e.g., fertilizers, pesticides, etc.)
+                const request = {
+                    location: userLocation,
+                    radius: 5000, // Search within a 5 km radius
+                    keyword: 'fertilizer', // Search for fertilizer shops
+                };
+
+                // Call the Places API to find nearby shops
+                service.nearbySearch(request, function(results, status) {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        // Clear any existing markers
+                        document.getElementById('shopList').innerHTML = '';
+                        results.forEach((place) => {
+                            const marker = new google.maps.Marker({
+                                position: place.geometry.location,
+                                map: map,
+                                title: place.name,
+                            });
+
+                            // Add a click listener to each marker
+                            google.maps.event.addListener(marker, "click", function() {
+                                infowindow.setContent(place.name + "<br>" + place.vicinity);
+                                infowindow.open(map, marker);
+                            });
+
+                            // Add the place to the list
+                            const shopItem = document.createElement("li");
+                            shopItem.innerHTML = `
+                                <strong>${place.name}</strong><br>
+                                Address: ${place.vicinity}<br>
+                                Distance: ${(google.maps.geometry.spherical.computeDistanceBetween(userLocation, place.geometry.location) / 1000).toFixed(2)} km
+                            `;
+                            document.getElementById('shopList').appendChild(shopItem);
+                        });
+                    } else {
+                        console.log("Error fetching places:", status);
+                    }
+                    hideLoadingScreen();
+                });
+            });
+        }
+    }
+
+    // Initialize the map when the window loads
+    window.onload = initMap;
+    window.onload = function () {
+            showLoadingScreen();
+             // Simulate quick load for demo
+        };
+
+    // Find Nearest Shops Button Handler
+    document.getElementById('findShops').addEventListener('click', initMap);
+</script>
+
 </body>
 </html>

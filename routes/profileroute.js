@@ -4,7 +4,7 @@ const imagesdb = require("../models/imageschema"); // Update with your actual co
 const {authreq}=require("../controllers/authcontrol");
 
 // Profile route
-router.get('/', async (req, res) => {
+router.get('/', authreq,async (req, res) => {
     // Assuming you have user information in the session
     console.log(req.user);
     const username = req.user.name; // Adjust this to your session logic

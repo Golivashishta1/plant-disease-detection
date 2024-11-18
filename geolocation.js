@@ -5,7 +5,7 @@ async function getCityName() {
         // Fetch the IP address of the user (you could also use request-based methods in an actual request)
         const ipResponse = await axios.get("https://api64.ipify.org?format=json");
         const ipAddress = ipResponse.data.ip;
-
+        
         // Use the IP address to fetch location information
         const locationResponse = await axios.get(`https://ipapi.co/${ipAddress}/json/`);
         const city = locationResponse.data.city;

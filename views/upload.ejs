@@ -186,8 +186,13 @@
         <form action="/upload" method="POST" enctype="multipart/form-data">
             <label class="drag-area" for="file-upload">
                 Drag and drop an image, or click to select
-                <input type="file" name="image" id="file-upload" accept="image/*">
+                <input type="file" name="image" id="file-upload" accept="image/*" required>
             </label>
+            <% if (filename) { %>
+                <h2>Uploaded File:</h2>
+                <p><%= filename %></p>
+              <% } %>
+            
             <button type="submit" class="upload-button">Upload Image</button>
         </form>
     </div>

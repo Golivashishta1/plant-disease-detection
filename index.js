@@ -10,6 +10,7 @@ const googleroute = require("./routes/googleroute");
 const logoutroute = require("./routes/logoutroute");
 const forgotroute=require("./routes/forgotroute")
 const passport = require("passport");
+const profileroute=require("./routes/profileroute")
 const uploadroute=require("./routes/uploadroute")
 require("./config/passport-setup");
 const session=require("express-session");
@@ -20,6 +21,7 @@ const { authreq } = require("./controllers/authcontrol");
 
 // Middleware and static files
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookie());
@@ -66,6 +68,7 @@ app.use("/auth/google", googleroute);
 app.use("/logout", logoutroute);
 app.use("/upload",uploadroute);
 app.use("/forgot",forgotroute);
+app.use("/profile",profileroute)
 
 // Start server
 app.listen(port, () => {

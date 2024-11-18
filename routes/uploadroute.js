@@ -6,7 +6,7 @@ const axios = require("axios");
 const { authreq } = require("../controllers/authcontrol");
 const FormData = require('form-data');
 const fs = require("fs"); // Import fs for reading files
-const getCityName=require("../geolocation")
+const {getCityName}=require("../geolocation")
 const imagesdb=require("../models/imageschema")
 
 // Configure multer storage for uploaded images
@@ -16,7 +16,8 @@ const storage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
         console.log(file);
-        cb(null, Date.now() + path.extname(file.originalname));
+        const uniquename=`${Date.now() + path.extname(file.originalname)}`
+        cb(null,uniquename);
     }
 });
 
@@ -24,7 +25,7 @@ const upload = multer({ storage: storage });
 
 // Render the upload page
 router.get("/", authreq, (req, res) => {
-    res.render("upload");
+    res.render("upload", { filename: null });
 });
 
 // Handle image upload and send it to Flask for prediction

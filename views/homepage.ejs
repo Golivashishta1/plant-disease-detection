@@ -875,6 +875,46 @@
     flex-direction: row;
     align-items: center;
 }
+@media (max-width: 1024px) {
+    .mainplant {
+        max-width: 400px; /* Scale down image */
+        max-height: 400px;
+        padding-right: 20px;
+    }
+    .mainhead {
+        font-size: 36px; /* Adjust heading size */
+        width: 100%; /* Ensure it takes the full width */
+    }
+    .inner-content {
+        flex-direction: column; /* Stack content */
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainplant {
+        max-width: 300px; /* Further scale down image */
+        max-height: 300px;
+        margin-bottom: 20px;
+    }
+    .mainhead {
+        font-size: 28px; /* Adjust heading size */
+    }
+}
+
+@media (max-width: 576px) {
+    .mainplant {
+        display: none; /* Hide plant image on small screens */
+    }
+    .mainhead {
+        font-size: 24px; /* Smaller heading size for phones */
+        text-align: center;
+    }
+    .inner-content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
 
 .logo {
     height: 60px;
