@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -171,8 +173,7 @@
 <body>
     <div class="loading-overlay" id="loading-overlay">
         <div class="loading-content">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Leaf_icon.svg/768px-Leaf_icon.svg.png" alt="Loading Icon">
-          <div class="loading-text">Loading... Please Wait</div>
+            <dotlottie-player src="https://lottie.host/e4122488-1c22-4118-890c-932f923c7982/vTAbUHxgwY.json" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
         </div>
       </div>
     
@@ -190,6 +191,12 @@
     <script>
         const loadingOverlay = document.getElementById('loading-overlay');
         const form = document.querySelector('form');
+
+// Intercept form submission
+window.addEventListener('pageshow', () => {
+  loadingOverlay.classList.remove('visible'); // Ensure the overlay is hidden
+});
+
 
 // Intercept form submission
 form.addEventListener('submit', (e) => {
