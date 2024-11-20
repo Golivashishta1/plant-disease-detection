@@ -20,6 +20,7 @@ const keys=require("./config/keys")
 const { authreq } = require("./controllers/authcontrol");
 
 // Middleware and static files
+app.use('/json', express.static(path.join(__dirname, 'json')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.urlencoded({ extended: true }));

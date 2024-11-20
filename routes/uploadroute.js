@@ -25,7 +25,7 @@ const upload = multer({ storage: storage });
 
 // Render the upload page
 router.get("/", authreq, (req, res) => {
-    res.render("upload", { filename: null });
+    res.render("upload", { filename: null });   
 });
 
 // Handle image upload and send it to Flask for prediction

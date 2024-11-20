@@ -1,5 +1,5 @@
-{
-  "plants": [
+[
+  
     {
       "name": "Aloe Vera",
       "light": "Full sun to partial shade",
@@ -829,4 +829,3 @@
       "care_tips": "Carrots thrive in full sun and well-drained soil. Thin the plants to ensure enough space for roots."
     }
   ]
-}

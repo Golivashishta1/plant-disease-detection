@@ -81,6 +81,8 @@ imagenet_labels = [
     "bark", "root", "flora"
 ]
 
+
+
 def is_plant_image(image):
     """Check if the uploaded image contains a plant."""
     input_tensor = transform(image).unsqueeze(0)

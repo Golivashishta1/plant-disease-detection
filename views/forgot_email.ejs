@@ -121,9 +121,61 @@
                 font-size: 1.5rem;
             }
         }
+
+        .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+    }
+
+    .loading-overlay.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .loading-content {
+      text-align: center;
+    }
+
+    .loading-content img {
+      width: 80px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loading-text {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #2e7d32;
+    }
     </style>
 </head>
 <body>
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-content">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Leaf_icon.svg/768px-Leaf_icon.svg.png" alt="Loading Icon">
+          <div class="loading-text">Loading... Please Wait</div>
+        </div>
+      </div>
+    
     <div class="container">
         <h1>Forgot Password</h1>
         <form action="/forgot/email" method="POST">
@@ -132,8 +184,23 @@
                 <input type="email" id="email" name="email" required>
                 <p><%= error %></p>
             </div>
-            <button type="submit">Send OTP</button>
+            <button  id="submit-btn" type="submit">Send OTP</button>
         </form>
     </div>
+    <script>
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const form = document.querySelector('form');
+
+// Intercept form submission
+form.addEventListener('submit', (e) => {
+  // Show loading overlay
+  loadingOverlay.classList.add('visible');
+
+  // Allow the form to proceed after showing the overlay
+  setTimeout(() => {
+    form.submit(); // Submit the form after a brief delay
+  }, 100); // Small delay to ensure overlay is visible
+});
+    </script>
 </body>
 </html>

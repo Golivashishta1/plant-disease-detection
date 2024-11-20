@@ -5,7 +5,10 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const secretKey = "B4t2F13Y"; // Use your secret key
 const axios = require("axios");
-
+const path=require("path")
+const fs=require("fs");
+const { plates } = require("transformers");
+const plantsData = require('./plantcare'); // Import the data
 router.get("/", (req, res) => {
   const token = req.cookies.jwt; // Get the token from cookies
   let decodedToken = null;
@@ -22,6 +25,7 @@ router.get("/", (req, res) => {
     token: decodedToken, // Pass the decoded token or null if verification fails
     user: decodedToken ? { id: decodedToken.id, username: decodedToken.username } : null,
   });
-});
+})
+;
 
 module.exports = router;
