@@ -4,299 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Result</title>
-    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9a3IwDPu4ns9kS4BKKg7T2DIYpDDiiRk&libraries=places"></script>
-</head>
-<style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: "Urbanist", sans-serif;
-    }
-
-    body {
-        background-color: #f3f4f6;
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        background-color: #ffffff;
-        border-radius: 16px;
-        padding: 20px;
-        max-width: 1000px;
-        width: 90%;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    }
-
-    h1 {
-        font-size: 28px;
-        color: #333;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .image-container {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .image-container img {
-        width: 80%;  /* Smaller image size */
-        max-width: 500px;
-        height: auto;
-        border-radius: 12px;
-        margin-bottom: 15px;
-    }
-
-    .content-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .bento-box {
-        display: flex;
-        flex-direction: column;
-        background-color: #fafafa;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        transition: transform 0.2s ease-in-out;
-    }
-
-    .bento-box:hover {
-        transform: translateY(-5px);
-    }
-
-    .section-title {
-        font-size: 18px;
-        color: #4a4a4a;
-        margin-bottom: 10px;
-        border-bottom: 1px solid #e0e0e0;
-        padding-bottom: 5px;
-    }
-
-    .result p,
-    .section p {
-        font-size: 16px;
-        color: #555;
-        line-height: 1.6;
-        margin: 8px 0;
-    }
-
-    .result {
-        margin-bottom: 15px;
-    }
-
-    ul {
-        list-style-type: disc;
-        padding-left: 20px;
-        margin-top: 10px;
-    }
-
-    .back-button {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px;
-        background-color: #0056b3;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 8px;
-        width: 100%;
-        transition: background-color 0.3s;
-    }
-
-    .back-button:hover {
-        background-color: #357ABD;
-    }
-
-    .find-shops-button {
-        display: inline-block;
-        padding: 12px;
-        background-color: #28a745;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 8px;
-        margin-top: 20px;
-        width: 100%;
-        transition: background-color 0.3s;
-    }
-
-    .find-shops-button:hover {
-        background-color: #218838;
-    }
-
-    /* Two-column layout for details (bottom part) */
-    .details-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .details-column {
-        flex: 1;
-        min-width: 300px;
-        max-width: 48%; /* Two columns */
-    }
-    #shopList {
-      margin-top: 20px;
-      list-style-type: none;
-      padding: 0;
-    }
-    #shopList li {
-      padding: 8px;
-      margin-bottom: 8px;
-      background-color: #f9f9f9;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .details-wrapper {
-            flex-direction: column;
-            gap: 10px;
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Urbanist", sans-serif;
         }
-        .details-column {
-            max-width: 100%;
-        }
-    }
-    #loading-screen {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            z-index: 1000;
+
+        body {
+            background-color: #f3f4f6;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            padding: 20px;
+            min-height: 100vh;
         }
 
-        #loading-screen img {
-            width: 100px;
+        .container {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            text-align: center;
             margin-bottom: 20px;
         }
 
-        #loading-screen p {
-            font-size: 20px;
-            color: #333;
+        .image-container {
+            text-align: center;
         }
-        .upload-another{
-            display: inline-block;
-        padding: 12px;
-        background-color: #28a745;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 8px;
-        margin-top: 20px;
-        width: 100%;
-        transition: background-color 0.3s;
+
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            margin-bottom: 15px;
         }
-</style>
+
+        .result {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .result p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .details-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .bento-box {
+            background-color: #fafafa;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 5px;
+        }
+
+        .content p,
+        ul {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .back-button,
+        .upload-another {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .back-button {
+            background-color: #0056b3;
+        }
+
+        .upload-another {
+            background-color: #28a745;
+        }
+
+        .back-button:hover {
+            background-color: #357ABD;
+        }
+
+        .upload-another:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
 <body>
     <div class="container">
         <h1>Prediction Result</h1>
-        
         <div class="image-container">
             <% if (image_url) { %>
-                <img src="<%= image_url %>" alt="Uploaded Image" />
+                <img src="<%= image_url %>" alt="Uploaded Image">
             <% } %>
-
-            <div class="result">
-                <p><strong>Predicted Disease:</strong> <%= predicted_disease %></p>
-                <p><strong>Confidence:</strong> <%= confidence %>%</p>
+        </div>
+        <div class="result">
+            <p><strong>Predicted Disease:</strong> <%= predicted_disease %></p>
+            <p><strong>Confidence:</strong> <%= confidence %>%</p>
+        </div>
+        <div class="details-section">
+            <div class="bento-box">
+                <div class="section-title">Description</div>
+                <p><%= description %></p>
+            </div>
+            <div class="bento-box">
+                <div class="section-title">Symptoms</div>
+                <ul>
+                    <% symptoms.forEach(function(symptom) { %>
+                        <li><%= symptom %></li>
+                    <% }); %>
+                </ul>
+            </div>
+            <div class="bento-box">
+                <div class="section-title">Treatments</div>
+                <% treatments.forEach(function(treatment) { %>
+                    <p><strong>Name:</strong> <%= treatment.name %></p>
+                    <p><strong>Type:</strong> <%= treatment.type %></p>
+                    <p><strong>Application:</strong> <%= treatment.application %></p>
+                    <p><strong>Frequency:</strong> <%= treatment.frequency %></p>
+                    <p><strong>Effectiveness:</strong> <%= treatment.effectiveness %></p>
+                    <p><strong>Duration for Recovery:</strong> <%= treatment.duration_for_recovery %></p>
+                    <p><strong>Warnings:</strong> <%= treatment.warnings.join(", ") %></p>
+                    <hr>
+                <% }); %>
             </div>
         </div>
-
-        <div class="content-wrapper">
-            <!-- Details Section with Two Columns -->
-            <div class="details-wrapper">
-                <!-- Left Column -->
-                <div class="details-column">
-                    <div class="bento-box">
-                        <div class="section">
-                            <div class="section-title">Description</div>
-                            <p><%= description %></p>
-                        </div>
-                    </div>
-
-                    <div class="bento-box">
-                        <div class="section">
-                            <div class="section-title">Symptoms</div>
-                            <ul>
-                                <% symptoms.forEach(function(symptom) { %>
-                                    <li><%= symptom %></li>
-                                <% }); %>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column -->
-                <div class="details-column">
-                    <div class="bento-box">
-                        <div class="section">
-                            <div class="section-title">Treatments</div>
-                            <% treatments.forEach(function(treatment) { %>
-                                <p><strong>Name:</strong> <%= treatment.name %></p>
-                                <p><strong>Type:</strong> <%= treatment.type %></p>
-                                <p><strong>Application:</strong> <%= treatment.application %></p>
-                                <p><strong>Frequency:</strong> <%= treatment.frequency %></p>
-                                <p><strong>Effectiveness:</strong> <%= treatment.effectiveness %></p>
-                                <p><strong>Duration for Recovery:</strong> <%= treatment.duration_for_recovery %></p>
-                                <p><strong>Warnings:</strong> <%= treatment.warnings.join(", ") %></p>
-                                <hr>
-                            <% }); %>
-                        </div>
-                    </div>
-
-                    <div class="bento-box">
-                        <div class="section">
-                            <div class="section-title">Pests</div>
-                            <% pests.forEach(function(pest) { %>
-                                <p><strong>Name:</strong> <%= pest.name %></p>
-                                <p><strong>Control Measures:</strong> <%= pest.control_measures %></p>
-                                <p><strong>Warnings:</strong> <%= pest.warnings.join(", ") %></p>
-                                <hr>
-                            <% }); %>
-                        </div>
-                    </div>
-
-                    <div class="bento-box">
-                        <div class="section">
-                            <div class="section-title">Fertilizers</div>
-                            <% fertilizers.forEach(function(fertilizer) { %>
-                                <p><strong>Name:</strong> <%= fertilizer.name %></p>
-                                <p><strong>Application:</strong> <%= fertilizer.application %></p>
-                                <p><strong>Effectiveness:</strong> <%= fertilizer.effectiveness %></p>
-                                <p><strong>Warnings:</strong> <%= fertilizer.warnings.join(", ") %></p>
-                                <hr>
-                            <% }); %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        
-        <a href="/upload"><button class="upload-another">upload another image</button></a>
-        <!-- Find Shops Button -->
-        <button class="find-shops-button" id="findShops">Find Nearest Pest and Fertilizer Shops</button>
-        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places"></script>
+        <a href="/upload" class="upload-another">Upload Another Image</a>
+    </div>
+</body>
+</html>
 
 <script>
     // Initialize the map
@@ -312,75 +183,79 @@
         function hideLoadingScreen() {
             document.getElementById("loading-screen").style.display = "none";
         }
-
-    function initMap() {
-       
-        // Use the current location as the center of the map
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                const userLat = position.coords.latitude;
-                const userLng = position.coords.longitude;
-
-                const userLocation = new google.maps.LatLng(userLat, userLng);
-                map = new google.maps.Map(document.getElementById("mapContainer"), {
-                    center: userLocation,
-                    zoom: 14,
-                });
-
-                infowindow = new google.maps.InfoWindow();
-
-                // Create a PlacesService object to query the Google Places API
-                service = new google.maps.places.PlacesService(map);
-
-                // Perform a search for nearby shops (e.g., fertilizers, pesticides, etc.)
-                const request = {
-                    location: userLocation,
-                    radius: 5000, // Search within a 5 km radius
-                    keyword: 'fertilizer', // Search for fertilizer shops
-                };
-
-                // Call the Places API to find nearby shops
-                service.nearbySearch(request, function(results, status) {
-                    if (status === google.maps.places.PlacesServiceStatus.OK) {
-                        // Clear any existing markers
-                        document.getElementById('shopList').innerHTML = '';
-                        results.forEach((place) => {
-                            const marker = new google.maps.Marker({
-                                position: place.geometry.location,
-                                map: map,
-                                title: place.name,
-                            });
-
-                            // Add a click listener to each marker
-                            google.maps.event.addListener(marker, "click", function() {
-                                infowindow.setContent(place.name + "<br>" + place.vicinity);
-                                infowindow.open(map, marker);
-                            });
-
-                            // Add the place to the list
-                            const shopItem = document.createElement("li");
-                            shopItem.innerHTML = `
-                                <strong>${place.name}</strong><br>
-                                Address: ${place.vicinity}<br>
-                                Distance: ${(google.maps.geometry.spherical.computeDistanceBetween(userLocation, place.geometry.location) / 1000).toFixed(2)} km
-                            `;
-                            document.getElementById('shopList').appendChild(shopItem);
-                        });
-                    } else {
-                        console.log("Error fetching places:", status);
-                    }
-                    hideLoadingScreen();
-                });
-            });
-        }
-    }
-
     // Initialize the map when the window loads
-    window.onload = initMap;
     window.onload = function () {
             showLoadingScreen();
              // Simulate quick load for demo
         };
+
+
+        // function toggleLanguageList() {
+        //     const languageList = document.getElementById("languages");
+        //     languageList.style.display = languageList.style.display === "block" ? "none" : "block";
+        // }
+
+        function translatePage(language) {
+    try {
+        // Get all text elements with IDs to translate
+        const textElements = document.querySelectorAll("p");
+        const textsToTranslate = Array.from(textElements).map((element) => element.textContent);
+
+        // Prepare the query parameters for translation
+        const query = textsToTranslate.join("\n");  // Concatenate texts for batch translation
+
+        // Prepare the XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+        console.log(query);
+
+        xhr.open('POST', 'https://microsoft-translator-text.p.rapidapi.com/translate?api-version=3.0&to=' + language);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('x-rapidapi-key', 'c6d3dd8dc2msh35968bb908183afp19a286jsnc133a209e535');  // Replace with your own key
+        xhr.setRequestHeader('x-rapidapi-host', 'microsoft-translator-text.p.rapidapi.com');
+
+        // Prepare the data to send in the request body
+        const data = JSON.stringify([{ Text: query }]);  // Convert the text into the correct format
+
+        console.log(data)
+
+        // Set up the request completion handler
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+
+                    // Extract translated text from response
+                    const translatedTexts = response[0].translations.map(translation => translation.text);
+                    console.log(translatedTexts);
+                    // Apply the translated text back to each element
+                    textElements.forEach((element, index) => {
+                        element.textContent = translatedTexts[index];
+                        
+                    });
+                } else {
+                    console.error('Translation failed with status:', xhr.status, xhr.statusText);
+                    alert(error);
+                }
+            }
+        };
+
+        // Send the request with the data
+        xhr.send(data);
+
+    } catch (error) {
+        console.error('Error with translation:', error.message);
+        alert(error)
+    }
+}
+
+
+
+        // Hide dropdown on outside click
+        window.addEventListener("click", (event) => {
+            if (!translateButton.contains(event.target) && !translateDropdown.contains(event.target)) {
+                translateDropdown.style.display = "none";
+            }
+        });
 
     // Find Nearest Shops Button Handler
     document.getElementById('findShops').addEventListener('click', initMap);
