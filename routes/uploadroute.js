@@ -32,7 +32,7 @@ const upload = multer({ storage: storage });
 // Function to retrieve disease information from a JSON file
 async function getDiseaseInfo(diseaseName) {
   try {
-    const data = await fs.promises.readFile("disease_details.json.txt", "utf-8");
+    const data = await fs.promises.readFile("C:\\Users\\vashi\\Downloads\\final project - Copy\\plant-disease-detection\\disease_details.json", "utf-8");
     const diseaseDescriptions = JSON.parse(data);
     return diseaseDescriptions[diseaseName] || {}; // Return disease info if available
   } catch (error) {

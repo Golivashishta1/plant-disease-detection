@@ -31,7 +31,7 @@ model.eval()
 plant_model = models.mobilenet_v2(pretrained=True)
 plant_model.eval()
 
-with open("disease_details.json.txt", "r") as f:
+with open("C:\\Users\\vashi\\Downloads\\final project - Copy\\plant-disease-detection\\disease_details.json", "r") as f:
     disease_descriptions = json.load(f)
 
 id2label = {
