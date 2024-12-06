@@ -230,19 +230,6 @@
 </style>
 <body>
     <div class="container">
-        <!-- Translate Button with Dropdown -->
-        <button class="translate-button">Translate</button>
-        <div class="language-dropdown" id="languageDropdown">
-            <select id="languages" onchange="translatePage()">
-                <option value="">Select Language</option>
-                <option value="hi">हिंदी (Hindi)</option>
-                <option value="bn">বাংলা (Bengali)</option>
-                <option value="te">తెలుగు (Telugu)</option>
-                <option value="mr">मराठी (Marathi)</option>
-                <option value="ta">தமிழ் (Tamil)</option>
-                <option value="en">English</option>
-            </select>
-        </div>
         <h1 class="translatable">Prediction Result</h1>
 
     <div class="image-container">
@@ -327,127 +314,9 @@
     </div>
 
     <a href="/upload"><button class="upload-another translatable">upload another image</button></a>
-    <!-- Find Shops Button -->
-    <button class="find-shops-button translatable" id="findShops">Find Nearest Pest and Fertilizer Shops</button>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWLYYl4MO6_qulIQDCoYp5Y8Qrr5L4K9o&libraries=places"></script>
+    
 
 <script>
-    // Initialize the map
-    let map;
-    let service;
-    let infowindow;
-
-
-    const originalAddEventListener = EventTarget.prototype.addEventListener;
-
-        // Override addEventListener to default touch and scroll events to passive
-        EventTarget.prototype.addEventListener = function (type, listener, options) {
-            const isTouchEvent = type === 'touchmove' || type === 'touchstart' || type === 'wheel';
-            if (isTouchEvent && (!options || typeof options === 'boolean')) {
-                options = { passive: true };
-            }
-            originalAddEventListener.call(this, type, listener, options);
-        };
-
-        function initMap() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                            const userLocation = {
-                                lat: position.coords.latitude,
-                                lng: position.coords.longitude,
-                            };
-
-                            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=fertilizers&query_place_id=${userLocation.lat},${userLocation.lng}`;
-                            window.open(mapsUrl, '_blank');
-                        },
-                        (error) => {
-                        alert("Failed to get your location. Please enable location access and try again.");
-                    }
-                );
-            } else {
-                alert("Geolocation is not supported by your browser.");
-            }
-        }
-
-        // Add click event listener for the button
-        document.getElementById("findShops").addEventListener("click", initMap);
-
-        // function toggleLanguageList() {
-        //     const languageList = document.getElementById("languages");
-        //     languageList.style.display = languageList.style.display === "block" ? "none" : "block";
-        // }
-
-        
-
-
-
-        // Hide dropdown on outside click
-
-    const translateAPIKey = "AIzaSyDMbA-aqrKTknrr_uLc2ftAsXSiPEPIpd4";
-
-    function translatePage() {
-    const language = document.getElementById("languages").value;
-
-    if (language === "") return; // Don't translate if no language is selected
-
-    const elements = document.querySelectorAll(".translatable");
-    
-    // Loop through each element and translate
-    elements.forEach(function(element) {
-        fetchTranslation(element.textContent, language)
-            .then(translatedText => {
-                element.textContent = translatedText; // Set the translated text
-            })
-            .catch(error => {
-                console.error("Translation error:", error);
-            });
-    });
-}
-
-// Function to fetch translation from Google Translate API
-async function fetchTranslation(text, targetLanguage) {
-    const apiKey = 'AIzaSyDMbA-aqrKTknrr_uLc2ftAsXSiPEPIpd4'; // Replace with your API key
-
-    const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
-
-    const body = {
-        q: text,
-        target: targetLanguage,
-    };
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(body),
-        });
-
-        const data = await response.json();
-
-        if (data.error) {
-            throw new Error(data.error.message);
-        }
-
-        return data.data.translations[0].translatedText;
-    } catch (error) {
-        console.error('Google Translate API error:', error);
-        return text; // Return original text if there is an error
-    }
-}
-
-
-// Hide dropdown on outside click
-window.addEventListener("click", (event) => {
-        const button = document.querySelector(".translate-button");
-    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.style.display = "none";
-    }
-});
-
-    // Find Nearest Shops Button Handler
 </script>
 
 </body>
